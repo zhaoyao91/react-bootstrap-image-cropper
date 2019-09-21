@@ -30,7 +30,7 @@ npm i react react-bootstrap react-easy-crop
 
 ```jsx harmony
 import React, { useRef } from "react";
-import ImageCropper from "react-bootstrap-image-cropper";
+import { ImageCropper } from "react-bootstrap-image-cropper";
 
 function App() {
   // if you don't care the onChange event, you can use a ref to retrieve the cropped file
@@ -48,7 +48,7 @@ function App() {
       onChange={handleChange}
       cropOptions={{ aspect: 4 / 3, maxZoom: 10 }}
       outputOptions={{ maxWidth: 400, maxHeight: 300 }}
-      previewOptions={{ width: 400, height: 400 }}
+      previewOptions={{ width: 400, height: 300 }}
     />
   );
 }
