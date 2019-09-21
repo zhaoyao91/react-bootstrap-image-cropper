@@ -1,5 +1,4 @@
-/.idea/
-/node_modules/
+/.idea
+/node_modules
 
-/example/
-/docs/
+/example
