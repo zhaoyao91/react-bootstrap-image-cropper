@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-bootstrap-image-cropper/precache-manifest.206adc622b26610a722ee5de27ac1514.js"
+  "/react-bootstrap-image-cropper/precache-manifest.69e9900cdf75a0ce170924ab738610e8.js"
 );
 
 self.addEventListener('message', (event) => {
