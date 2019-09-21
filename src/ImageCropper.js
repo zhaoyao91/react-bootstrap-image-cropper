@@ -129,6 +129,7 @@ export function ControlledImageCropper({
       <input
         ref={fileInputRef}
         type="file"
+        accept="image/*"
         value=""
         onChange={handleFileChange}
         hidden

@@ -47,6 +47,7 @@ export default function HiddenCropper({
       <input
         ref={inputRef}
         type="file"
+        accept="image/*"
         value=""
         onChange={handleFileChange}
         hidden
