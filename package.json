@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-image-cropper",
-  "version": "0.0.0-dev.0",
+  "version": "0.0.0-dev.1",
   "description": "Select, crop, preview, edit, all in one!",
   "keywords": [
     "react-bootstrap",
@@ -20,7 +20,11 @@
     "@babel/preset-react": "^7.0.0"
   },
   "peerDependencies": {
-    "react": ">=16.8.3",
-    "react-bootstrap": "^1.0.0-beta.10"
+    "react": "^16.8.3",
+    "react-bootstrap": "^1.0.0-beta.10",
+    "react-easy-crop": "^1.16.0"
+  },
+  "dependencies": {
+    "use-object-url": "^1.0.0"
   }
 }

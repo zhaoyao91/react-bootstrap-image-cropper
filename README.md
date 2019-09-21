@@ -22,7 +22,7 @@ npm i react-bootstrap-image-cropper
 You also need the depended packages:
 
 ```bash
-npm i react react-bootstrap
+npm i react react-bootstrap react-easy-crop
 ```
 
 ## Usage
