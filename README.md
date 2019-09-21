@@ -11,7 +11,8 @@ All the rest left for you is to get the final file and upload it to your server.
 
 ## Demo
 
-todo
+[Demo](https://codesandbox.io/s/react-bootstrap-image-cropper-6edp6)
+![demo](https://user-images.githubusercontent.com/3808838/65366436-64537500-dc56-11e9-8754-f4566e90ebdc.gif)
 
 ## Installation
 
