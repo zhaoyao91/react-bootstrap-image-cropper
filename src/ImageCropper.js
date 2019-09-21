@@ -99,13 +99,13 @@ export function ControlledImageCropper({
   showModal,
   cropState,
   onChangeCropState,
-  onConfirm, // (croppedFile) => void
-  onCancel, // void => void
-  onRemove, // void => void
-  cropOptions = {}, // {aspect, maxZoom}
-  outputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
-  displayOptions = {}, // {title, removeButtonText, confirmButtonText}
-  previewOptions = {} // {width, height, children, imageFile}
+  onConfirm,
+  onCancel,
+  onRemove,
+  cropOptions = {},
+  outputOptions = {},
+  displayOptions = {},
+  previewOptions = {}
 }) {
   const fileInputRef = useRef();
 
