@@ -1,24 +1,14 @@
 {
   "name": "react-bootstrap-image-cropper",
-  "version": "0.0.0-dev.1",
+  "version": "0.0.0-dev.3",
   "description": "Select, crop, preview, edit, all in one!",
   "keywords": [
     "react-bootstrap",
     "image cropper"
   ],
-  "main": "lib/ImageCropper.js",
-  "scripts": {
-    "build": "babel src -d lib",
-    "prepublish": "npm run build"
-  },
+  "main": "src/ImageCropper.js",
   "author": "zhaoyao91 <zhaoyao91@aliyun.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0"
-  },
   "peerDependencies": {
     "react": "^16.8.3",
     "react-bootstrap": "^1.0.0-beta.10",
