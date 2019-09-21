@@ -15,7 +15,7 @@ export default function CropImageModal({
   onRemove, // void => void
   cropOptions = {}, // {aspect, maxZoom}
   outputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
-  displayOptions = {} // {title, removeButtonText, confirmButtonText}
+  displayOptions = {} // {title, removeButtonText, confirmButtonText, showRemoveButton, showConfirmButton}
 }) {
   const { aspect, maxZoom } = cropOptions;
 
@@ -29,7 +29,9 @@ export default function CropImageModal({
   const {
     title = "Crop Image",
     removeButtonText = "Remove",
-    confirmButtonText = "Confirm"
+    confirmButtonText = "Confirm",
+    showRemoveButton = true,
+    showConfirmButton = true
   } = displayOptions;
 
   const imageUrl = useObjectURL(imageFile);
@@ -68,12 +70,16 @@ export default function CropImageModal({
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="danger" className="mr-auto" onClick={onRemove}>
-          {removeButtonText}
-        </Button>
-        <Button variant="primary" onClick={handleConfirm}>
-          {confirmButtonText}
-        </Button>
+        {showRemoveButton && (
+          <Button variant="danger" className="mr-auto" onClick={onRemove}>
+            {removeButtonText}
+          </Button>
+        )}
+        {showConfirmButton && (
+          <Button variant="primary" onClick={handleConfirm}>
+            {confirmButtonText}
+          </Button>
+        )}
       </Modal.Footer>
     </Modal>
   );
