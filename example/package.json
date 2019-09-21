@@ -16,6 +16,8 @@
     "eject": "react-scripts eject",
     "link": "npm link ../"
   },
+  "repository": "https://github.com/zhaoyao91/react-bootstrap-image-cropper",
+  "homepage": "https://zhaoyao91.github.io/react-bootstrap-image-cropper",
   "eslintConfig": {
     "extends": "react-app"
   },

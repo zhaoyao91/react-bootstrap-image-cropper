@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-image-cropper",
-  "version": "0.2.0-dev.0",
+  "version": "0.2.0",
   "description": "Select, crop, preview, edit, all in one!",
   "keywords": [
     "react-bootstrap",
@@ -17,7 +17,7 @@
   },
   "author": "zhaoyao91 <zhaoyao91@aliyun.com>",
   "repository": "https://github.com/zhaoyao91/react-bootstrap-image-cropper",
-  "homepage": "http://zhaoyao91.github.io/react-bootstrap-image-cropper",
+  "homepage": "https://zhaoyao91.github.io/react-bootstrap-image-cropper",
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.3",

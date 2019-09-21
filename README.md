@@ -9,9 +9,12 @@ this package provides an all-in-one component which handles all of image selecti
 
 All the rest left for you is to get the final file and upload it to your server.
 
-## Demo
+## Demo & Example
 
-[Demo](https://codesandbox.io/s/react-bootstrap-image-cropper-6edp6)
+[Demo](https://zhaoyao91.github.io/react-bootstrap-image-cropper/)
+
+[Example](./example)
+
 ![demo](https://user-images.githubusercontent.com/3808838/65366436-64537500-dc56-11e9-8754-f4566e90ebdc.gif)
 
 ## Installation
@@ -23,7 +26,7 @@ npm i react-bootstrap-image-cropper
 You also need the depended packages:
 
 ```bash
-npm i react react-bootstrap react-easy-crop
+npm i react react-bootstrap
 ```
 
 ## Usage
@@ -79,7 +82,7 @@ Options with `*` prefix are recommended to set.
 
 ## Advanced Usage
 
-See [Demo](#demo).
+See [Demo & Example](#demo--example).
 
 ### License
 
