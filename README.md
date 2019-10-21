@@ -35,6 +35,11 @@ Options with `*` prefix are recommended to set.
 
 ### Common Options
 
+- `inputOptions` ? : object
+  - \* `maxWidth` = Infinity
+  - \* `maxHeight` = Infinity
+  - `mimeType` = 'image/jpeg'
+  - `quality` ? : number
 - `cropOptions` ? : object
   - \* `aspect` ? : number
   - `maxZoom` ? : number

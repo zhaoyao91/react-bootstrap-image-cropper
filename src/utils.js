@@ -1,4 +1,4 @@
-// 以下工具复制自 https://codesandbox.io/s/q8q1mnr01w
+// 以下工具部分复制自 https://codesandbox.io/s/q8q1mnr01w
 // 略有修改
 
 export async function createImageDomFromUrl(url) {
@@ -8,6 +8,35 @@ export async function createImageDomFromUrl(url) {
     image.addEventListener("error", error => reject(error));
     image.src = url;
   });
+}
+
+export async function limitImageSize({
+  imageUrl,
+  maxWidth,
+  maxHeight,
+  mimeType,
+  quality
+}) {
+  const image = await createImageDomFromUrl(imageUrl);
+
+  if (image.width <= maxWidth && image.height <= maxHeight) {
+    return imageUrl;
+  }
+
+  const { width, height } = limitSize(
+    image.width,
+    image.height,
+    maxWidth,
+    maxHeight
+  );
+
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(image, 0, 0, width, height);
+
+  return canvas.toDataURL(mimeType, quality);
 }
 
 /**

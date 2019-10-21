@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import { Button, Modal } from "react-bootstrap";
+import React, { useEffect, useRef, useState } from "react";
+import { Button, Modal, Spinner } from "react-bootstrap";
 import useObjectURL from "use-object-url";
 
 import CropImagePanel from "./CropImagePanel";
-import { getCroppedFile } from "./utils";
+import { getCroppedFile, limitImageSize } from "./utils";
 
 export default function CropImageModal({
   show,
@@ -13,10 +13,18 @@ export default function CropImageModal({
   onConfirm, // (croppedFile) => void
   onCancel, // void => void
   onRemove, // void => void
+  inputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
   cropOptions = {}, // {aspect, maxZoom}
   outputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
   displayOptions = {} // {title, removeButtonText, confirmButtonText, showRemoveButton, showConfirmButton}
 }) {
+  const {
+    maxWidth: inputMaxWidth = Infinity,
+    maxHeight: inputMaxHeight = Infinity,
+    mimeType: inputMimeType = "image/jpeg",
+    quality: inputQuality
+  } = inputOptions;
+
   const { aspect, maxZoom } = cropOptions;
 
   const {
@@ -35,6 +43,28 @@ export default function CropImageModal({
   } = displayOptions;
 
   const imageUrl = useObjectURL(imageFile);
+
+  const [resizedUrl, setResizedUrl] = useState();
+  const [resizing, setResizing] = useState(false);
+
+  useEffect(() => {
+    if (imageUrl) {
+      setResizing(true);
+      limitImageSize({
+        imageUrl,
+        maxWidth: inputMaxWidth,
+        maxHeight: inputMaxHeight,
+        mimeType: inputMimeType,
+        quality: inputQuality
+      })
+        .then(url => setResizedUrl(url))
+        .catch(err => console.error(err))
+        .finally(() => setResizing(false));
+    } else {
+      setResizedUrl();
+    }
+  }, [imageUrl]);
+
   const cropResultRef = useRef();
 
   function handleCropComplete(croppedArea, croppedAreaPixels) {
@@ -43,7 +73,7 @@ export default function CropImageModal({
 
   function handleConfirm() {
     getCroppedFile(
-      imageUrl,
+      resizedUrl,
       cropResultRef.current.croppedAreaPixels,
       maxWidth,
       maxHeight,
@@ -57,10 +87,15 @@ export default function CropImageModal({
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body style={{ minHeight: "50vh" }}>
-        {imageUrl && (
+      <Modal.Body style={{ height: "50vh" }}>
+        {resizing && (
+          <div className="d-flex justify-content-center align-items-center h-100">
+            <Spinner animation="grow" />
+          </div>
+        )}
+        {resizedUrl && (
           <CropImagePanel
-            imageUrl={imageUrl}
+            imageUrl={resizedUrl}
             value={value}
             onChange={onChange}
             onCropComplete={handleCropComplete}

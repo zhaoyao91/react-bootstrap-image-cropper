@@ -6,6 +6,7 @@ import CropImageModal from "./CropImageModal";
 export default function ImageCropper({
   fileRef,
   onChange,
+  inputOptions,
   cropOptions,
   outputOptions,
   displayOptions,
@@ -85,6 +86,7 @@ export default function ImageCropper({
       onConfirm={handleConfirm}
       onCancel={handleCancel}
       onRemove={handleRemove}
+      inputOptions={inputOptions}
       cropOptions={cropOptions}
       outputOptions={outputOptions}
       displayOptions={displayOptions}
@@ -102,6 +104,7 @@ export function ControlledImageCropper({
   onConfirm,
   onCancel,
   onRemove,
+  inputOptions = {},
   cropOptions = {},
   outputOptions = {},
   displayOptions = {},
@@ -143,6 +146,7 @@ export function ControlledImageCropper({
         onConfirm={onConfirm}
         onCancel={onCancel}
         onRemove={onRemove}
+        inputOptions={inputOptions}
         cropOptions={cropOptions}
         outputOptions={outputOptions}
         displayOptions={displayOptions}

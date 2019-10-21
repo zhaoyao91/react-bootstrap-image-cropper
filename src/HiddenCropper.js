@@ -5,6 +5,7 @@ import CropImageModal from "./CropImageModal";
 export default function HiddenCropper({
   triggerRef, // ref.current.trigger()
   onCropped, // (croppedFile) => void
+  inputOptions = {},
   cropOptions = {},
   outputOptions = {},
   displayOptions = {}
@@ -59,6 +60,7 @@ export default function HiddenCropper({
         onChange={setCropState}
         onConfirm={handleConfirm}
         onCancel={handleCancel}
+        inputOptions={inputOptions}
         cropOptions={cropOptions}
         outputOptions={outputOptions}
         displayOptions={{ ...displayOptions, showRemoveButton: false }}
